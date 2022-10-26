@@ -1,22 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+// import changePassword from "./ChangePassword";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* <button onClick={changePassword}>Change Password</button> */}
+        <button
+          onClick={() => {
+            fetch("http://localhost:4000/screenshot")
+              .then((response) => {
+                if (response.status === 200) alert("Password Changed!!");
+                else alert("Password Not Changed .... ");
+              })
+              .catch((error) => {
+                alert("Password was not changed");
+              });
+          }}
         >
-          Learn React
-        </a>
+          TAKE SCREENSHOT
+        </button>
       </header>
     </div>
   );
