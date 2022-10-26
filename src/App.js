@@ -20,7 +20,7 @@ function App() {
               });
           }}
         >
-          TAKE SCREENSHOT
+          Change Password
         </button>
       </header>
     </div>
